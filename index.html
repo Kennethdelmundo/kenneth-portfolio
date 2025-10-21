@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenneh DelMundo | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+        .home {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        .about {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #1e1e1e;
+        }
+        .projects {
+            min-height: 100vh;
+        }
+        .home h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 4rem;
+            color: orangered;
+        }
+        .social-icons i {
+            font-size: 2.5rem;
+            margin: 10px;
+            transition: transform 0.3s;
+            color: rgb(44, 44, 255)
+        }
+        .social-icons i:hover {
+            transform: scale(1.2);
+            color: orangered;
+        }
+        .btn-custom {
+            background: orangered;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: #ff5722;
+            transform: translateY(5px) scale(1.05);
+        }
+        .card{
+            box-shadow: 5px 5px 15px rgba(248, 243, 243, 0.3);
+        }
+        .card:hover{
+            transform: translateY(-5px) scale(1.05);
+        }
+        .bg-animated {
+        background: linear-gradient(45deg, #121212, #1e1e1e, #2a2a2a);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        opacity: 0.5;
+    }
+
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .skill-bars .skill {
+        margin-bottom: 15px;
+    }
+
+    .skill-bars .skill-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .skill-bars .skill-bar {
+        background-color: #333;
+        height: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .skill-bars .skill-percentage {
+        height: 100%;
+        border-radius: 5px;
+    }
+    .project-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .project-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            }
+            .project-image {
+                height: 250px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+            .project-card:hover .project-image {
+                transform: scale(1.1);
+            }
+            .project-overlay {
+                background-color: rgba(0,0,0,0.5);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .project-card:hover .project-overlay {
+                opacity: 1;
+            }
+            :root {
+    --navbar-bg: rgba(30, 30, 30, 0.8);
+    --navbar-hover-color: orangered;
+    --navbar-text-color: #ffffff;
+}
+
+.custom-navbar {
+    background-color: transparent;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    z-index: 1050;
+    display: flex;
+    justify-content: center; /* Horizontally center the navbar content */
+}
+
+.max-w-responsive {
+    max-width: 350px;
+    width: 90%;
+    display: flex;
+    justify-content: center; /* Ensure inner content is centered */
+}
+
+.nav-icons {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+    justify-content: center; /* Center nav items horizontally */
+}
+
+.nav-link {
+    color: var(--navbar-text-color);
+    font-size: 1.5rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.75rem;
+}
+
+.nav-link:hover {
+    color: var(--navbar-hover-color);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.nav-link::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -2.5rem; /* Changed from bottom to top */
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.nav-link:hover::before {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* Extra Small Devices */
+@media (max-width: 375px) {
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .max-w-responsive {
+        max-width: 300px;
+    }
+}
+
+/* Small Devices */
+@media (min-width: 376px) and (max-width: 576px) {
+    .nav-link {
+        font-size: 1.3rem;
+    }
+    
+    .max-w-responsive {
+        max-width: 400px;
+    }
+}
+
+/* Medium Devices */
+@media (min-width: 577px) and (max-width: 768px) {
+    .max-w-responsive {
+        max-width: 400px;
+    }
+}
+
+/* Large Devices */
+@media (min-width: 769px) and (max-width: 992px) {
+    .max-w-responsive {
+        max-width: 450px;
+    }
+}
+
+/* Extra Large Devices */
+@media (min-width: 993px) {
+    .max-w-responsive {
+        max-width: 500px;
+    }
+}
+
+/* Responsive Typography */
+        @media (max-width: 768px) {
+            .home h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 60px !important;
+            }
+            
+            .about h1, .projects h1, #contact h1 {
+                font-size: 50px !important;
+            }
+            
+            .lead {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .home h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 40px !important;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .social-icons i {
+                font-size: 2rem;
+            }
+        }
+
+        /* Responsive Sections */
+        @media (max-width: 768px) {
+            .home, .about, .projects {
+                padding: 3rem 1rem;
+            }
+            
+            .project-card {
+                margin-bottom: 2rem;
+            }
+            
+            .skill-bars {
+                margin-top: 2rem;
+            }
+        }
+
+        /* Responsive Images */
+        @media (max-width: 576px) {
+            .profile-image {
+                max-width: 250px !important;
+                max-height: 250px !important;
+            }
+            
+            .status-badge {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            .project-image {
+                height: 200px;
+            }
+        }
+
+        /* Responsive Contact Section */
+        @media (max-width: 768px) {
+            #contact .col-md-6 {
+                margin-bottom: 2rem;
+            }
+            
+            .social-icons.mt-2 {
+                justify-content: center;
+            }
+            
+            .social-icons a {
+                margin: 0 10px;
+            }
+        }
+
+        /* Fix for Navbar on Small Devices */
+        @media (max-width: 576px) {
+            .nav-icons {
+                padding: 0.5rem 1rem;
+            }
+            
+            .nav-link {
+                padding: 0.25rem 0.5rem;
+            }
+            
+            .nav-link::before {
+                display: none;
+            }
+        }
+
+        /* Improved Container Spacing */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+            
+            .col-12 {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) {
+            .project-card:hover {
+                transform: none;
+            }
+            
+            .nav-link:hover {
+                transform: none;
+            }
+            
+            .btn-custom:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom custom-navbar">
+        <div class="container-fluid px-3 justify-content-center">
+            <div class="nav-icons d-flex justify-content-between max-w-responsive">
+                <a class="nav-link" href="#home" data-tooltip="Home">
+                    <i class="bi bi-house-fill"></i>
+                </a>
+                <a class="nav-link" href="#about" data-tooltip="About">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+                <a class="nav-link" href="#projects" data-tooltip="Projects">
+                    <i class="bi bi-collection-fill"></i>
+                </a>
+                <a class="nav-link" href="#contact" data-tooltip="Contact">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Home Section -->
+    <div id="home" class="home bg-dark text-center position-relative overflow-hidden">
+        <div class="bg-animated position-absolute top-0 start-0 w-100 h-100 z-0"></div>
+        <div class="container position-relative z-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-content">
+                        <p class="text-light fw-bold fs-4 animate__animated animate__fadeInUp">Hello, I'm</p>
+                        <h1 class="display-1 mb-2" style='font-family: "Anton", sans-serif; color: orangered; font-size: 100px;'>
+                            Kenneth Del Mundo
+                        </h1>
+                        <div class="typed-text text-light fs-4 mb-4">
+                            <span id="typed-output"></span>
+                        </div>
+                        <div class="cta-buttons d-flex justify-content-center gap-3">
+                            <a href="Del Mundo Kenneth - Resume.pdf" download class="btn-custom animate__animated animate__pulse animate__delay-1s" 
+                                style="text-decoration: none;">
+                                <i class="bi bi-download me-2"></i>Download Resume
+                            </a>
+    
+                            <a href="#projects" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-eye me-2"></i>View Projects
+                            </a>
+                        </div>
+                        <div class="mt-4 d-flex justify-content-center gap-4 social-icons">
+                            <a href="https://github.com/Kennethdelmundo" target="_blank" class="text-light animate__animated animate__bounceIn">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kenneth-del-mundo-00b1a52aa/" target="_blank" class="text-light animate__animated animate__bounceIn animate__delay-1s">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.facebook.com/kenneth.b.del.mundo" target="_blank" class="text-light animate__animated animate__bounceIn animate__delay-2s">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/hahahahhhhhhhhhhh_/" target="_blank" class="text-light animate__animated animate__bounceIn animate__delay-3s">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Section -->
+    <div id="about" class="container position-relative z-3 py-5">
+        <div class="row mb-5 hidden">
+            <div class="col-12 text-center">
+                <h1 style='font-family: "Anton", sans-serif; font-weight: 200; font-style: normal; font-size: 90px; color: orangered; text-shadow: 2px 2px 4px rgba(255,69,0,0.5);'>About Kenneth</h1>
+            </div>
+        </div>
+        
+        <div class="row align-items-center mb-5 hidden">
+            <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+                <div class="profile-image-container position-relative d-inline-block">
+                    <img src="images/pro.jpg" alt="Kenneth Del Mundo" class="img-fluid rounded-circle profile-image" style="max-width: 100%; width: 350px; max-height: 350px; object-fit: cover; object-position: center 30%; border: 5px solid white; box-shadow: 0 0 30px rgb(255, 255, 255);">
+                    <div class="status-badge position-absolute bottom-0 end-0 bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 text-light">
+                <div class="bg-dark p-4 rounded-4" style="background-color: rgba(30,30,30,0.8);">
+                    <h2 class="mb-1" style="color: orangered;">Hi, I'm</h2>
+                    <h1 style="font-weight: bolder;">Kenneth Del Mundo</h1>
+                    <p class="lead mb-4">
+                        Versatile Developer with hands-on experience from academic projects, freelancing, and OJT, combining software expertise with IoT hardware development. Recognized for strong problem solving skills, effective communication, and a collaborative mindset. Dedicated to delivering innovative solutions and eager to grow while contributing value to the team.
+                    </p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="text-light mb-3">
+                                <i class="bi bi-rocket-takeoff text-primary me-2"></i>Professional Focus
+                            </h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <span class="badge bg-primary me-2">Frontend/Backend Development</span>
+                                    <span class="badge bg-primary">IoT Solutions</span>
+                                    <span class="badge bg-primary">Networking</span>
+                                </li>
+                                <li>Specializing in creating scalable, intelligent systems that push technological boundaries</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="text-light mb-3">
+                                <i class="bi bi-puzzle text-primary me-2"></i>Key Competencies
+                            </h4>
+                            <div class="skill-bars">
+                                <div class="skill mb-2">
+                                    <div class="skill-name">
+                                        <i class="bi bi-cpu me-2"></i>IoT Development
+                                    </div>
+                                </div>
+                                <div class="skill mb-2">
+                                    <div class="skill-name">
+                                        <i class="bi bi-code-slash me-2"></i>Web Development
+                                    </div>
+                                </div>
+                                <div class="skill mb-2">
+                                    <div class="skill-name">
+                                        <i class="bi bi-database me-2"></i>PHP
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row text-light">
+            <div class="col-12 col-md-4 mb-4 hidden">
+                <div class="card h-100 bg-dark border-0" style="background-color: rgba(30,30,30,0.8);">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: orangered;">
+                            <i class="bi bi-code-slash me-2"></i>Technical Skills
+                        </h3>
+                        <ul class="list-unstyled text-light">
+                            <li class="mb-2">
+                                <strong>Programming:</strong> Python, C++ (for IoT Integration), JavaScript, PHP, Dart
+                            </li>
+                            <li class="mb-2">   
+                                <strong>Web Development:</strong> HTML, CSS Bootstrap
+                            </li>
+                            <li>
+                                <strong>IoT & Embedded Systems:</strong> Arduino, ESP32, Sensor Integration
+                            </li>
+                            <li>
+                                <strong>Databases:</strong> MySQL, Firebase(RTDB)
+                            </li>
+                            <li>
+                                <strong>Tools & Platforms:</strong> Git/GitHub, VS Code, Arduino IDE, Firebase, Windows Server
+                            </li>
+                            <li>
+                                <strong>Networking:</strong> LAN/WAN Configuration, Cisco Packet Tracer
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4 hidden">
+                <div class="card h-100 bg-dark border-0" style="background-color: rgba(30,30,30,0.8);">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: orangered;">
+                            <i class="bi bi-lightbulb me-2"></i>Interests
+                        </h3>
+                        <ul class="list-unstyled text-light">
+                            <li class="mb-2">• IoT and Smart Systems</li>
+                            <li class="mb-2">• Front & Backend Development</li>
+                            <li class="mb-2">• Sustainable Technology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4 hidden">
+                <div class="card h-100 bg-dark border-0" style="background-color: rgba(30,30,30,0.8);">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: orangered;">
+                            <i class="bi bi-trophy me-2"></i>Achievements
+                        </h3>
+                        <ul class="list-unstyled text-light">
+                            <li class="mb-2">• 1st Place, BITCON IoT Research Competion 2025</li>
+                            <li class="mb-2">• Empowering ALS and SHS Student through IoT and Robotics</li>
+                            <li class="mb-2">• Best Presenter, NRCITE Research Competition 2025</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-light">
+                <div class="bg-dark p-4 rounded-4" style="background-color: rgba(30,30,30,0.8);">
+                    <h2 class="mb-1" style="color: orangered;">Professional Experience</h2>
+                    <p class="lead" style="font-weight: bold; margin-bottom: 0;">
+                        <strong>IT Specialist</strong> (Intern)(February 2025 - May 2025)
+                    </p>
+                    <p class="lead" style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        Developed a real-time IoT monitoring system using PHP, Python, and C++ to track machine conditions, detect alarms, and automatically retrieve related CCTV footage, improving operational efficiency and enabling real-time machine health monitoring.
+                    </p>
+                    <p class="lead" style="font-weight: bold; margin-bottom: 0;">
+                        <strong>Guest Lecturer</strong> (Part-Time)(August 2025 - Present)
+                    </p>
+                    <p class="lead" style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        College Guest Lecturer at Batangas State University – The National Engineering University, teaching Python programming and IoT development to undergraduate students. Designed and delivered engaging lectures, live coding sessions, and hands-on demonstrations to enhance students’ technical and problem-solving skills. Recognized for clear communication and the ability to simplify complex technical concepts.
+                    </p>
+                    <p class="lead" style="font-weight: bold; margin-bottom: 0;">
+                        <strong>Freelance Developer</strong> (May 2025 - Present)
+                    </p>
+                    <p class="lead" style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        Delivered customized IoT-based software and hardware solutions for clients, from prototyping to deployment. Designed and implemented web and mobile applications integrated with IoT devices for real-world use cases, and collaborated directly with clients, demonstrating strong project management, adaptability, and client-focused communication skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Projects Section -->
+    <div id="projects" class="projects bg-dark py-5">
+        <div class="container">
+            <div class="row mb-3 hidden">
+                <div class="col-12 text-center">
+                    <h1 class="display-3 fw-bold" style='font-family: "Anton", sans-serif; color: orangered; text-shadow: 2px 2px 4px rgba(255,69,0,0.5);'>
+                        My Projects
+                    </h1>
+                    <p class="lead text-light mb-4">
+                        Innovative solutions that blend technology, creativity, and problem-solving
+                    </p>
+                </div>
+            </div>
+    
+            <div class="row g-4">
+                <!-- Each project card is now wrapped with hidden class -->
+                <div class="col-12 col-md-4 mb-4 hidden">
+                    <div class="card project-card h-100 rounded-4 overflow-hidden shadow-lg">
+                        <div class="position-relative">
+                            <img src="images/Rainwater.jpg" class="card-img-top project-image" alt="IoT Rainwater Harvesting System">
+                        </div>
+                        <div class="card-body bg-dark">
+                            <h3 class="card-title text-center mb-3" style="color: orangered;">
+                                IoT Rainwater Harvesting
+                            </h3>
+                            <p class="card-text text-light text-center">
+                                Automated water collection system using IoT sensors for sustainable resource management.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-secondary bg-opacity-10 border-0 text-center">
+                            <span class="badge bg-primary me-2">IoT</span>
+                            <span class="badge bg-success">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-12 col-md-4 mb-4 hidden">
+                    <div class="card project-card h-100 rounded-4 overflow-hidden shadow-lg">
+                        <div class="position-relative">
+                            <img src="images/POS.jpg" class="card-img-top project-image" alt="IoT Rainwater Harvesting System">
+                        </div>
+                        <div class="card-body bg-dark">
+                            <h3 class="card-title text-center mb-3" style="color: orangered;">
+                                Smart POS System
+                            </h3>
+                            <p class="card-text text-light text-center">
+                                Advanced point-of-sale solution with real-time sales tracking and inventory management.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-secondary bg-opacity-10 border-0 text-center">
+                            <span class="badge bg-primary me-2">Web Dev</span>
+                            <span class="badge bg-success">Business</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-12 col-md-4 mb-4 hidden">
+                    <div class="card project-card h-100 rounded-4 overflow-hidden shadow-lg">
+                        <div class="position-relative">
+                            <img src="images/carControl.jpg" class="card-img-top project-image" alt="IoT Rainwater Harvesting System">
+                        </div>
+                        <div class="card-body bg-dark">
+                            <h3 class="card-title text-center mb-3" style="color: orangered;">
+                                IoT Car Control System
+                            </h3>
+                            <p class="card-text text-light text-center">
+                                Remote-controlled vehicle with advanced tracking and automation capabilities.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-secondary bg-opacity-10 border-0 text-center">
+                            <span class="badge bg-primary me-2">IoT</span>
+                            <span class="badge bg-success">Robotics</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-12 col-md-4 mb-4 hidden">
+                    <div class="card project-card h-100 rounded-4 overflow-hidden shadow-lg">
+                        <div class="position-relative">
+                            <img src="images/Line.jpg" class="card-img-top project-image" alt="IoT Rainwater Harvesting System">
+                        </div>
+                        <div class="card-body bg-dark">
+                            <h3 class="card-title text-center mb-3" style="color: orangered;">
+                                Autonomous Line Tracing Car
+                            </h3>
+                            <p class="card-text text-light text-center">
+                                Self-navigating vehicle using advanced sensor technology for precise path following.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-secondary bg-opacity-10 border-0 text-center">
+                            <span class="badge bg-primary me-2">Automation</span>
+                            <span class="badge bg-success">Sensors</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-12 col-md-4 mb-4 hidden">
+                    <div class="card project-card h-100 rounded-4 overflow-hidden shadow-lg">
+                        <div class="position-relative">
+                            <img src="images/carRental.jpg" class="card-img-top project-image" alt="IoT Rainwater Harvesting System">
+                        </div>
+                        <div class="card-body bg-dark">
+                            <h3 class="card-title text-center mb-3" style="color: orangered;">
+                                Car Rental Web App
+                            </h3>
+                            <p class="card-text text-light text-center">
+                                Online platform for seamless vehicle rental with secure booking and real-time tracking.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-secondary bg-opacity-10 border-0 text-center">
+                            <span class="badge bg-primary me-2">Web Dev</span>
+                            <span class="badge bg-success">E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4 mb-4 hidden">
+                    <div class="card project-card h-100 rounded-4 overflow-hidden shadow-lg">
+                        <div class="position-relative">
+                            <img src="images/machinemonitoring.jpg" class="card-img-top project-image" alt="IoT Rainwater Harvesting System">
+                        </div>
+                        <div class="card-body bg-dark">
+                            <h3 class="card-title text-center mb-3" style="color: orangered;">
+                                Machine Monitoring System
+                            </h3>
+                            <p class="card-text text-light text-center">
+                                Integration of IoT Sensors and a Web system to properly monitor the status of the machine inside the production.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-secondary bg-opacity-10 border-0 text-center">
+                            <span class="badge bg-primary me-2">Web Dev</span>
+                            <span class="badge bg-success">IoT Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <div id="contact" class="container-fluid py-5 hidden" style="background-color: #121212;">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mb-5">
+                <h1 style='font-family: "Anton", sans-serif; font-weight: 200; font-style: normal; font-size: 90px; color: orangered; text-shadow: 2px 2px 4px rgba(255,69,0,0.5);'>Contact Me</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="row g-4">
+                    <div class="col-12 col-md-6">
+                        <div style="background-color: #1e1e1e; border-radius: 15px; padding: 30px; height: 100%;">
+                            <h3 style="color: orangered; margin-bottom: 20px;">Contact Information</h3>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-envelope text-primary me-3" style="font-size: 24px;"></i>
+                                    <span class="text-light">kdelmundo51@gmail.com</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-phone text-primary me-3" style="font-size: 24px;"></i>
+                                    <span class="text-light">+63 9491596620</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-geo-alt text-primary me-3" style="font-size: 24px;"></i>
+                                    <span class="text-light">Malvar Batangas, Philippines</span>
+                                </div>
+                            </div>
+                            <div class="social-icons mt-2 d-flex">
+                                <a href="https://github.com/Kennethdelmundo" target="_blank" class="me-2">
+                                    <i class="fa fa-github" style="font-size: 50px;"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/kenneth-del-mundo-00b1a52aa/" target="_blank" class="me-">
+                                    <i class="fa fa-linkedin" style="font-size: 50px;"></i>
+                                </a>
+                                <a href="https://www.facebook.com/kenneth.b.del.mundo" target="_blank">
+                                    <i class="fa fa-facebook" style="font-size: 50px;"></i>
+                                </a>
+                                <a href="https://www.instagram.com/hahahahhhhhhhhhhh_/" target="_blank">
+                                    <i class="fa fa-instagram" style="font-size: 50px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div style="background-color: #1e1e1e; border-radius: 15px; padding: 30px; height: 100%;">
+                            <form id="contactForm" action="https://formspree.io/f/xkgjbdyy" method="POST">
+                                <div class="mb-4">
+                                    <label for="name" class="form-label text-light">Name</label>
+                                    <input type="text" class="form-control bg-dark border-secondary" id="name" name="name" required placeholder="Enter your name" style="background-color: #ffffff !important;">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="form-label text-light">Email</label>
+                                    <input type="email" class="form-control bg-dark border-secondary" id="email" name="email" required placeholder="Enter your email" style="background-color: #ffffff !important;">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="message" class="form-label text-light">Message</label>
+                                    <textarea class="form-control bg-dark border-secondary" id="message" name="message" rows="5" required placeholder="Write your message here" style="background-color: #ffffff !important;"></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn-custom" style="width: 100%;">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Existing footer -->
+    <footer>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <p>Created by <a href="https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw" class="text-light">Kenneth Del Mundo</a></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    } else {
+                        entry.target.classList.remove('show');
+                    }
+                });
+            }, observerOptions);
+    
+            // Select all elements with hidden class
+            const hiddenElements = document.querySelectorAll('.hidden');
+            hiddenElements.forEach(el => observer.observe(el));
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var typed = new Typed('#typed-output', {
+                strings: [
+                    'Freelancer',
+                    'Front End Developer',
+                    'IoT Enthusiast',
+                    'Tech Innovator'
+                ],
+                typeSpeed: 80,
+                backSpeed: 80,
+                loop: true
+            });
+        });
+    </script>
+</body>
+</html>
